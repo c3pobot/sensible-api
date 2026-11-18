@@ -1,9 +1,11 @@
-FROM node:20-alpine AS builder
+FROM node:22-alpine AS builder
 COPY package*.json ./
 RUN npm install --omit=dev
 
-FROM node:20-alpine AS app
+FROM node:22-alpine AS app
+LABEL org.opencontainers.image.source=https://github.com/c3pobot/sensible-api
 WORKDIR /app
+RUN mkdir -p /opt/data
 COPY --from=builder node_modules node_modules/
 COPY . .
 CMD [ "node", "index.js" ]

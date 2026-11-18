@@ -1,4 +1,3 @@
-import compression from 'compression'
 import log from './logger.js'
 
 import express from 'express'

@@ -1,4 +1,4 @@
-let logLevel = process.env.LOG_LEVEL || 'info'
+let logLevel = process.env.LOG_LEVEL || 'debug'
 
 const timestampFormatter = new Intl.DateTimeFormat('en-US', {
   timeZone: 'Etc/GMT+5',
